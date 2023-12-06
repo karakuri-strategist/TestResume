@@ -1,0 +1,9 @@
+---
+import Layout from './Layout.astro';
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title}>
+  <h1 class="text-xl mb-4 font-bold">{frontmatter.title}</h1>
+  <slot/>
+</Layout>

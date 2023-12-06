@@ -17,7 +17,19 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<header class="bg-slate-700 text-white py-2 px-4 ">
+			<div class="mx-auto max-w-[660px]">
+				<h3>
+					<span class="text-lg" >Alec Featherston</span>
+				</h3>
+			</div>
+		</header>
+	
+		<div class="px-4 py-8 ">
+			<div class="mx-auto max-w-[660px]">
+				<slot />
+			</div>
+		</div>
 	</body>
 </html>
 <style is:global>
@@ -34,9 +46,13 @@ const { title } = Astro.props;
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background: #13151a;
 		background-size: 224px;
 	}
+
+	body {
+		margin: 0;
+	}
+
 	code {
 		font-family:
 			Menlo,

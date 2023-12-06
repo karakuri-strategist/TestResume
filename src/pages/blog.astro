@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro'
+let allBlogs = await Astro.glob('./blog/*.md');
+---
+
+<Layout title='Blogs'>
+  <h1 class="text-2xl mb-4 font-bold">Blogs</h1>
+  <ul class="space-y-2">
+    {
+      allBlogs.map((blog: any) => (
+        <li>
+          <a href={blog.url} class="text-blue-600">{blog.frontmatter.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>
+
